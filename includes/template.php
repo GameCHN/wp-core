@@ -568,7 +568,7 @@ function load_template($_template_file, $require_once = true)
         //echo View::make($tplfile)->with(array_except(get_defined_vars(), array('__data', '__path')));
         //echo View::file($_template_file)->with(array_except(get_defined_vars(), array('__data', '__path')) );
         try {
-            error_reporting(E_ALL & ~E_NOTICE);
+            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED );
             echo View::file($_template_file)->with(array_except(get_defined_vars(), array('__data', '__path')))->render();
         } catch (Exception $e) {
             kd($e);
