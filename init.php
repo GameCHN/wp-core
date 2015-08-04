@@ -196,4 +196,4 @@ function init_smilies()
 
 add_action('init', 'init_smilies', 5);
 
-require __DIR__.'/extra/remove-category-parents.php';
+//require __DIR__.'/extra/remove-category-parents.php';
