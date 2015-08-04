@@ -338,7 +338,7 @@ function get_template_directory() {
 function get_template_directory_uri() {
 	$template = str_replace( '%2F', '/', rawurlencode( get_template() ) );
 	$theme_root_uri = get_theme_root_uri( $template );
-    if (class_exists('Module') and $module = Modules::get($template)) {
+    if (class_exists('Modules') and $module = Modules::get($template)) {
         $template = $module->getName();
     }
 	$template_dir_uri = "$theme_root_uri/$template";

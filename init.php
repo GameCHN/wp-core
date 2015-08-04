@@ -126,6 +126,7 @@ add_filter('sanitize_file_name', function ($filename) {
 show_admin_bar(false);
 
 
+
 /**
  * @see http://zmingcx.com/wordpress-4-2-edition-problem.html
  */
@@ -189,3 +190,4 @@ add_action('init', 'init_smilies', 5);
 foreach (\Modules::all() as $module) {
     \register_theme_directory(dirname($module->getPath()));
 }
+View::addLocation(realpath(get_template_directory(). '/Resources/views') ?: get_template_directory());
