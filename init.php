@@ -183,3 +183,9 @@ function init_smilies()
 add_action('init', 'init_smilies', 5);
 
 //require __DIR__.'/extra/remove-category-parents.php';
+
+
+/** @type \YCMS\Modules\Module $module */
+foreach (\Modules::all() as $module) {
+    \register_theme_directory(dirname($module->getPath()));
+}

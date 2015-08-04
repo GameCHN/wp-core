@@ -69,6 +69,8 @@
  * @param bool $translate Optional. If the returned data should be translated. Defaults to true.
  * @return array See above for description.
  */
+
+
 function get_plugin_data( $plugin_file, $markup = true, $translate = true ) {
 
 	$default_headers = array(
@@ -245,7 +247,7 @@ function get_plugins($plugin_folder = '') {
 		return $cache_plugins[ $plugin_folder ];
 
 	$wp_plugins = array ();
-	$plugin_root = WP_CONTENT_DIR; //WP_PLUGIN_DIR;
+	$plugin_root = defined('MY_PLUGIN_DIR') ? MY_PLUGIN_DIR :  WP_PLUGIN_DIR;
 	if ( !empty($plugin_folder) )
 		$plugin_root .= $plugin_folder;
 
