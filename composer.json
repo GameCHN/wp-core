@@ -1,0 +1,7 @@
+{
+	"name": "ycms/wp-core",
+	"type": "wordpress-plugin",
+	"description": "The component of FastEcho Framework",
+	"authors": [
+	]
+}
