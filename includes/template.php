@@ -566,7 +566,13 @@ function load_template($_template_file, $require_once = true)
     if ($isBlade = preg_match("/\.blade\.php$/", $_template_file)) {
         $tplfile = str_replace(['Resources/views/','.blade.php'],'',substr($_template_file,strlen(get_template_directory())+1));
         //echo View::make($tplfile)->with(array_except(get_defined_vars(), array('__data', '__path')));
-        echo View::file($_template_file)->with(array_except(get_defined_vars(), array('__data', '__path')) );
+        //echo View::file($_template_file)->with(array_except(get_defined_vars(), array('__data', '__path')) );
+        try {
+            error_reporting(E_ALL & ~E_NOTICE);
+            echo View::file($_template_file)->with(array_except(get_defined_vars(), array('__data', '__path')))->render();
+        } catch (Exception $e) {
+            kd($e);
+        }
         return '';
     }
 
